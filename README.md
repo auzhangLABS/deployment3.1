@@ -1,23 +1,18 @@
-<p align="center">
-<img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
-</p>
-<h1 align="center">C4_deployment-3.1<h1> 
+# Deployment 3.1 Documentation
+## Purpose:
+Deployment 3.1 is a continuation of Deployment 3. To see Deployment 3, please click [here](https://github.com/auzhangLABS/c4_deployment3). This deployment 3.1 file serves as an incident report regarding an issue we had with our application on Sep 20. Upon investigating, we had a recent update to our application by a new hire resulting in a 500 Internal Server Error whenever the application was used. Here are our methods of resolving this issue:
 
-The Story
------------------------------------------
-We’re a tech start-up company with a URL shortener tool. We have a SLA with Nike to provide them access to our URL shortener. In the SLA, we are only allowed 20 minutes of downtime a year. If anything happens to the URL shortener, we must communicate any incidents to Nike.
- 
-Scenario
------------------------------------------
-A new hire was tasked with updating the URL shortener. The new hire committed version 2 of the application to the main branch. Which automatically triggered a build, test, and deploy to the production server, replacing version 1 of the application running on the server.
+## Method 1: Looking into Git commit.
+My first method was to look into git commits and investigate the changes within the code. Upon investigating, I noticed that there was an error with the application.py file that caused the error. Once, I fix that Jenkins will automatically rerun, build, test, and deploy (using Webhooks), and the application will work. Given that this would take up too much time, I present another solution using rollback (Method 2).
 
-Next Steps 
------------------------------------------
-Create a post-incident report. The report must include:
-- What was the reason for the incident?
-- How long was the site down or malfunctioning?
-- What steps were taken to resolve the incident?
-- Was the incident fully resolved?
-- What steps would you take to prevent this from happening again?
+## Method 2: Using Rollback.
+Once, we encounter the error we would roll back to the previous version and then diagnose the problem. To do this, I had to revert the code within the application.py code that would throw the error. Once I did this, I would validate this by trying to rerun the application and got a 500 error. 
+1. Get the most recent changes in the Github repository
+   - `git pull`
+   - You can verify this by using:
+      - `git log --oneliner` or `git log --pretty=oneline` to show full commit id
+   - Here are is a snippet of the results I got:
+![image](https://github.com/auzhangLABS/deployment3.1/assets/138344000/e8c5d626-b127-476a-89b3-a41b19677bba)
+   - Here, I was able to tell what the commit ID was Version 1 and Version 2
 
-  
+2. Rollback to the previous version
