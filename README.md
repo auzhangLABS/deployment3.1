@@ -11,7 +11,7 @@ Once, we encounter the error we would roll back to the previous version and then
    - `git pull`
    - You can verify this by using:
       - `git log --oneliner` or `git log --pretty=oneline` to show full commit id
-   - Here are is a snippet of the results I got:
+   - Here is a snippet of the results I got:
 ![image](https://github.com/auzhangLABS/deployment3.1/assets/138344000/e8c5d626-b127-476a-89b3-a41b19677bba)
    - Here, I was able to tell what the commit ID was Version 1 and Version 2
 
