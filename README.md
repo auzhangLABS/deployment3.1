@@ -5,7 +5,19 @@
 
 Demonstrate your ability deploy a fully automated Elastic Beanstalk deployment.
 
+<<<<<<< HEAD
 - Create a separate GitHub repository for this application 
+=======
+## Method 2: Using Rollback.
+Once, we encounter the error we would roll back to the previous version and then diagnose the problem. To do this, I had to revert the code within the application.py code that would throw the error. Once I did this, I would validate this by trying to rerun the application and got a 500 error. 
+1. Get the most recent changes in the Github repository
+   - `git pull`
+   - You can verify this by using:
+      - `git log --oneliner` or `git log --pretty=oneline` to show full commit id
+   - Here is a snippet of the results I got:
+![image](https://github.com/auzhangLABS/deployment3.1/assets/138344000/e8c5d626-b127-476a-89b3-a41b19677bba)
+   - Here, I was able to tell what the commit ID was Version 1 and Version 2
+>>>>>>> 52fcca416e58c92f8f7ddf7fa62f5ed2f3ddcddb
 
 - Download the files from this repository and upload them to your newly created repository 
 
