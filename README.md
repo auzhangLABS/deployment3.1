@@ -10,7 +10,7 @@ Deployment 3.1 is a continuation of Deployment 3. To see Deployment 3, please cl
 My first method was to look into git commits and investigate the changes within the code. Upon investigating, I noticed that there was an error with the application.py file that caused the error. Once, I fix that Jenkins will automatically rerun, build, test, and deploy (using Webhooks), and the application will work. Given that this would take up too much time, I present another solution using rollback (Method 2).
 
 ## Method 2: Using Rollback to the previous application.py (version 1).
-This method would allow you to roll back to the Version 1 application.py file without changing any other files within the repository. This allows you to keep your original templates. To do this, I had to revert the code within the application.py code that would throw the error. Once I did this, I would validate this by trying to rerun the application and got a 500 error. 
+This method would allow you to roll back to the Version 1 application.py file without changing any other files within the repository. This allows you to keep your original templates. To do this, I had to revert the code within the application.py code that would throw the error. Once I did this, I would validate this by trying to rerun the application and got a 500 (server) error. 
 1. Get the most recent changes in the Github repository
    - `git pull`
    - You can verify this by using:
