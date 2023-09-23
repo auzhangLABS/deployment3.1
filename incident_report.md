@@ -2,20 +2,23 @@
 
 ### Report Prepared by: Aubrey Zhang
 
-#### Date and Time of Incident: 9/20/2023 at about 8:00 pm
+#### Date and Time of Incident: 9/20/2023 at approximately 8:00 pm
 
-1. Reason of the Incident:
-   - The incident was caused by a new hire that was tasked with updating the URL shortener. The new hire committed to version 2 of the GitHub repository. Since it utilized the webhook, it automatically triggers build, tests, and deploys to the main production server. This replaces the working version 1 with the nonworking version 2
+#### Reason for the Incident:
+   - The incident was caused by a deployment error during an update to the URL shortener application. A new hire updated the URL shorter, committing changes within the URL shortener application to the GitHub repository. This act triggers a build and deploy process with Jenkins, that replaces the working version with the nonworking version.
 
-2. Incident Length:
-   - Est. 10 mins
+#### Incident Length:
+   - Approximately. 10 mins
+   - Temporary disruption in the URL shortener service
 
-3. Steps to resolve the incident:
-   - We quickly roll back to the previous working version and push that into the main production server.
+#### Steps to resolve the incident:
+   - Quicky, rolled back to the previous version of the URL shortener.
+   - Start an investigation into the root cause of Version 2 failure.
 
-4. Incident resolved:
-   - The incident has been resolved and we are looking into why version 2 failed.
+#### Incident resolved:
+   - The incident has been resolved, with services restored back to working version 1.
 
-5. How to prevent it from happening again?
-   - We should prevent new hires from getting access to the main production server.
-   - Have a chain of command to double check work
+#### How to prevent it from happening again?
+   - Implement control policies to limit access to production servers, especially for new hires.
+   - Establish a chain of command to set a peer review process for critical deployments.
+   - Ensure deployment works within the staging environment through testing.
