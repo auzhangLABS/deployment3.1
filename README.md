@@ -1,4 +1,6 @@
 # Deployment 3.1 Documentation
+
+## Incident Report:
 To see the incident report regarding an issue we had with our application on Sep 20, please click [here!](https://github.com/auzhangLABS/deployment3.1/blob/main/incident_report.md).
 
 ## Purpose:
